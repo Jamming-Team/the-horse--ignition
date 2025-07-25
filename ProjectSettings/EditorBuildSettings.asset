@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Horse/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Horse/Scenes/Core.unity
+    guid: 1123946cb84a6d14e820ea576d1abe1a
+  - enabled: 1
+    path: Assets/Horse/Scenes/Preloader.unity
+    guid: d6537b5f9cec089339b9e5d4b4644ae5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
