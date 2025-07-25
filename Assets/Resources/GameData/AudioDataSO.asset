@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7702d505324a9782aaf458c307a81f, type: 3}
   m_Name: AudioDataSO
   m_EditorClassIdentifier: 
-  musicVolume: 0.5
-  sfxVolume: 0.7
+  musicVolume: 0.25
+  sfxVolume: 0.663
   __alchemySerializationData_XTools_AudioDataSO:
     music:
       isCreated: 1

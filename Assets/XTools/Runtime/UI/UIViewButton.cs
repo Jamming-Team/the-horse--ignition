@@ -13,7 +13,7 @@ namespace XTools {
         [SerializeField] bool _hasSounds;
         [SerializeField, ShowIf("_hasSounds")] SoundData _onHoverSoundData;
         [SerializeField, ShowIf("_hasSounds")] SoundData _onClickSoundData;
-        
+
         [Inject] AudioManager _audioManager;
         Button _buttonReference;
 
@@ -24,7 +24,7 @@ namespace XTools {
         void OnEnable() {
             _buttonReference.onClick.AddListener(RaiseUIButtonEvent);
         }
-        
+
         void OnDisable() {
             _buttonReference.onClick.RemoveListener(RaiseUIButtonEvent);
         }
@@ -33,16 +33,12 @@ namespace XTools {
             // EventBus<UIButtonPressed>.Raise(new UIButtonPressed {
             //     buttonType = _buttonType,
             // });
-            _audioManager.PlaySound(_onClickSoundData);
-            if (_hasSounds)
-                XToolsEvents.UIButtonPressed.Invoke(_buttonType);
+            XToolsEvents.UIButtonPressed.Invoke(_buttonType);
+            if (_hasSounds) _audioManager.PlaySound(_onClickSoundData);
         }
-        
+
         public void OnPointerEnter(PointerEventData eventData) {
-            if (_hasSounds)
-                _audioManager.PlaySound(_onHoverSoundData);
+            if (_hasSounds) _audioManager.PlaySound(_onHoverSoundData);
         }
-
-
     }
 }
