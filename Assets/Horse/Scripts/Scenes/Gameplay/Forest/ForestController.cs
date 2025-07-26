@@ -32,6 +32,7 @@ namespace Horse {
 
         void OnTimeIsOut() {
             _isActive = false;
+            GameEvents.GameIsOver.Invoke(false);
         }
     }
 }

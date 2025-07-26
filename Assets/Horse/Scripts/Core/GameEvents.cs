@@ -6,5 +6,7 @@ namespace Horse {
 
         public static Action<List<AnimalContainer>> AnimalContainersSent = delegate {};
         public static Action<AnimalProcessingResults> AnimalsProcessed =  delegate {};
+        
+        public static Action<bool> GameIsOver = delegate {};
     }
 }

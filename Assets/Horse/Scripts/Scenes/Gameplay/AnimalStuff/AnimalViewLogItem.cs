@@ -12,5 +12,9 @@ namespace Horse {
             _prey.sprite = log.prey.sprite;
         }
 
+        public void Break() {
+            Destroy(gameObject);
+        }
+
     }
 }

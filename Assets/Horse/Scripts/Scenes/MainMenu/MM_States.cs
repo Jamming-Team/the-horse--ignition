@@ -9,7 +9,7 @@ using XTools.SM.Iron;
 
 namespace Horse {
     
-    // [Serializable]
+    [Serializable]
     public abstract class MM_State : SceneStateBase {
 
     }

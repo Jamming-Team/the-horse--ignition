@@ -65,7 +65,19 @@ namespace XTools.SM.Iron {
             return result;
         }
     }
+    
+    public class ActionPredicateWithData<T> : IPredicate {
+        public bool flag;
 
+        public ActionPredicateWithData(ref Action<T> eventReaction) => eventReaction += (T) => { flag = true; };
+
+        public bool Evaluate() {
+            bool result = flag;
+            flag = false;
+            return result;
+        }
+    }
+    
     public class ActionPredicateCompare<T> : IPredicate {
         bool _flag;
         T _referenceObject;

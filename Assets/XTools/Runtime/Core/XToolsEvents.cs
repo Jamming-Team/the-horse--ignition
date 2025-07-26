@@ -10,7 +10,8 @@ namespace XTools {
             LoadMainMenu,
             LoadGameplay,
             Settings,
-            Authors
+            Authors,
+            Submit
         }
         
     }

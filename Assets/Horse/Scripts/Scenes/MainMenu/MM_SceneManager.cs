@@ -16,13 +16,13 @@ namespace Horse {
             var settingsState = states.Find(v => v is SettingsState) as SettingsState;
             var authorsState = states.Find(v => v is AuthorsState) as AuthorsState;
         
-            At(mainViewState, settingsState,
+            AtCompare(mainViewState, settingsState,
                 new ActionPredicateCompare<UIButtonTypes>(ref XToolsEvents.UIButtonPressed, UIButtonTypes.Settings));
-            At(mainViewState, authorsState,
+            AtCompare(mainViewState, authorsState,
                 new ActionPredicateCompare<UIButtonTypes>(ref XToolsEvents.UIButtonPressed, UIButtonTypes.Authors));
-            At(settingsState, mainViewState,
+            AtCompare(settingsState, mainViewState,
                 new ActionPredicateCompare<UIButtonTypes>(ref XToolsEvents.UIButtonPressed, UIButtonTypes.Back));
-            At(authorsState, mainViewState,
+            AtCompare(authorsState, mainViewState,
                 new ActionPredicateCompare<UIButtonTypes>(ref XToolsEvents.UIButtonPressed, UIButtonTypes.Back));
         
             _stateMachine.SetState(mainViewState);
