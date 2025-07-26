@@ -18,14 +18,14 @@ namespace Horse {
             GameEvents.AnimalContainersSent -= AnimalContainersSent;
         }
 
-        void AnimalContainersSent(List<List<AnimalData>> obj) {
+        void AnimalContainersSent(List<AnimalContainer> obj) {
 
             var totalCount = 0;
             var eatingLogs = new List<AnimalEatingLog>();
             
             foreach (var container in obj) {
-                totalCount += container.Count;
-                _model.Process(ref eatingLogs, container);
+                totalCount += container.animals.Count;
+                _model.Process(ref eatingLogs, container.ExtractData());
             }
 
             var results = new AnimalProcessingResults {

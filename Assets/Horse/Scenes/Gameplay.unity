@@ -2179,15 +2179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abafb1665cba40cabb441f72cf05cb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animals:
-  - {fileID: 886011921}
-  - {fileID: 1628269990}
-  - {fileID: 141829693}
-  _animals2:
-  - {fileID: 1833493584}
-  - {fileID: 317935979}
-  _animals3:
-  - {fileID: 107148959}
+  _containers:
+  - animals:
+    - {fileID: 886011921}
+    - {fileID: 1628269990}
+  - animals:
+    - {fileID: 141829693}
 --- !u!4 &1041070262
 Transform:
   m_ObjectHideFlags: 0
