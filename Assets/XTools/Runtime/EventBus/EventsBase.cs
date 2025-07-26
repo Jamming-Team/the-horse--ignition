@@ -11,6 +11,7 @@ namespace XTools {
         public enum UIAudioSliders {
             SfxVolume,
             MusicVolume,
+            UIVolume,
         }
     }
     

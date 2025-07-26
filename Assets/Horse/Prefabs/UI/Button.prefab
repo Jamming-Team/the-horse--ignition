@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3716257714434606063
 CanvasRenderer:
@@ -139,7 +139,7 @@ MonoBehaviour:
   _onHoverSoundData:
     clips:
     - {fileID: 8300000, guid: 0d7152712c0a8e26793dcb63375c5980, type: 3}
-    mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
+    mixerGroup: {fileID: -4406925898064385786, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0
     mute: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   _onClickSoundData:
     clips:
     - {fileID: 8300000, guid: f962555cbf5d71bc7b7cd3ab4f7a82b7, type: 3}
-    mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
+    mixerGroup: {fileID: -4406925898064385786, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0
     mute: 0
@@ -278,8 +278,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 78
+  m_fontSizeBase: 78
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

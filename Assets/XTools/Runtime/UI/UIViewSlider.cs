@@ -16,7 +16,7 @@ namespace XTools {
         [Inject] DataManagerBase _dataManager;
         Slider _sliderReference;
 
-        CountdownTimer _soundCooldownTimer = new CountdownTimer(0.1f);
+        CountdownTimer _soundCooldownTimer = new(0.1f);
 
         void Awake() {
             _sliderReference = GetComponent<Slider>();
@@ -61,6 +61,10 @@ namespace XTools {
                 }
                 case UIAudioSliderChanged.UIAudioSliders.SfxVolume: {
                     _sliderReference.value = audioData.sfxVolume;
+                    break;
+                }
+                case UIAudioSliderChanged.UIAudioSliders.UIVolume: {
+                    _sliderReference.value = audioData.uiVolume;
                     break;
                 }
             }

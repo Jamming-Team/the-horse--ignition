@@ -50,6 +50,10 @@ namespace XTools {
                     audioData.sfxVolume = evt.value;
                     break;
                 }
+                case UIAudioSliderChanged.UIAudioSliders.UIVolume: {
+                    audioData.uiVolume = evt.value;
+                    break;
+                }
             }
 
             EventBus<DataChanged>.Raise(new DataChanged());

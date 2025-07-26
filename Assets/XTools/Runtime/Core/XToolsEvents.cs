@@ -11,7 +11,8 @@ namespace XTools {
             LoadGameplay,
             Settings,
             Authors,
-            Submit
+            Submit,
+            HowToPlay,
         }
         
     }

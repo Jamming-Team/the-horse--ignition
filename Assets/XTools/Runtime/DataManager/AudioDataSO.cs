@@ -11,6 +11,8 @@ namespace XTools {
         public float musicVolume;
         [Range(0.01f, 1f)]
         public float sfxVolume;
+        [Range(0.01f, 1f)]
+        public float uiVolume;
         [AlchemySerializeField, NonSerialized]
         public MusicData music;
     }
