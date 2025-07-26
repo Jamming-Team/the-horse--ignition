@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Horse/Scenes/MainMenu.unity
     guid: b18a050306e89142992803886aab4ad9
+  - enabled: 1
+    path: Assets/Horse/Scenes/Gameplay.unity
+    guid: dda509abeee0b6c6c8d67df0b21e3438
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
