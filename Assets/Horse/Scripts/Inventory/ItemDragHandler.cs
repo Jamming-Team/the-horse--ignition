@@ -44,10 +44,13 @@ namespace Horse.Inventory
         {
             Vector2 localPos;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                grid.inventoryRoot as RectTransform,
+                canvas.transform as RectTransform, // canvas!
                 eventData.position,
                 eventData.pressEventCamera,
-                out localPos);
+                out Vector2 canvasLocalPos
+            );
+
+            localPos = grid.inventoryRoot.InverseTransformPoint(canvas.transform.TransformPoint(canvasLocalPos));
 
             Vector2Int cellPos = grid.GetGridPosition(localPos);
             InventoryItem item = GetComponent<InventoryItem>();

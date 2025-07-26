@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b3156e3bf104add9b2f62d636791f4c, type: 3}
-  m_Name: ButterflyItem
+  m_Name: FrogItem
   m_EditorClassIdentifier: 
-  itemName: Butterfly
+  itemName: Frog
   width: 1
   height: 1
   icon: {fileID: 21300000, guid: 314ee61fbc4fca14a88ea63b0ca1b088, type: 3}

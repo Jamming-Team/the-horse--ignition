@@ -87,7 +87,7 @@ namespace Horse.Inventory
 
             RectTransform rt = item.GetComponent<RectTransform>();
             rt.SetParent(inventoryRoot);
-            rt.anchoredPosition = new Vector2(pos.x * cellSize, -pos.y * cellSize);
+            rt.anchoredPosition = new Vector2(0, 1);
         }
     }
 }
