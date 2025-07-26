@@ -10,7 +10,7 @@ namespace Horse {
     public class MM_SceneManager : SceneManagerBase<SceneStateBase> {
         
         protected override void SetupStateMachine() {
-            _stateMachine = new StateMachine();
+            _stateMachine = new StateMachine(this);
         
             var mainViewState = states.Find(v => v is MainViewState) as MainViewState;
             var settingsState = states.Find(v => v is SettingsState) as SettingsState;

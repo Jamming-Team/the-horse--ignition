@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+using XTools;
 
 namespace Horse {
     [Serializable]
@@ -22,8 +24,20 @@ namespace Horse {
     }
     
     [Serializable]
-    public sealed class IntermediateResultsState : GP_State {
+    public sealed class TransitionState : GP_State {
 
+        // TransitionManager _transitionManager;
+
+        public override void Init(MonoBehaviour core) {
+            base.Init(core);
+            // ServiceLocator.For(_coreMB).Get(out _transitionManager);
+        }
+
+        public override void OnEnter() {
+            base.OnEnter();
+            Debug.Log("Enter");
+            _coreMB.StartCoroutine(TransitionManager.Instance.Transit());
+        }
     }
     
     [Serializable]

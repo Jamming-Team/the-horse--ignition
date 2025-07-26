@@ -8,6 +8,7 @@ namespace Horse {
     public class GameDataSO : ScriptableObject {
 
         public float maxForestBurnTime = 60f;
+        public float truckWaitTime = 2f;
 
     }
     

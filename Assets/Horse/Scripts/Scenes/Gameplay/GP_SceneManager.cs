@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using XTools;
 using XTools.SM.Iron;
 
@@ -19,12 +20,12 @@ namespace Horse {
         }
 
         protected override void SetupStateMachine() {
-            _stateMachine = new StateMachine();
+            _stateMachine = new StateMachine(this);
 
             var tetrisState = states.Find(v => v is TetrisState) as TetrisState;
             var pauseState = states.Find(v => v is PauseState) as PauseState;
             var gp_settingsState = states.Find(v => v is GP_SettingsState) as GP_SettingsState;
-            var intermediateResultsState = states.Find(v => v is IntermediateResultsState) as IntermediateResultsState;
+            var transitionState = states.Find(v => v is TransitionState) as TransitionState;
             var endGameState = states.Find(v => v is EndGameState) as EndGameState;
 
             AtCompare(tetrisState, pauseState,
@@ -39,13 +40,15 @@ namespace Horse {
             AtCompare(gp_settingsState, pauseState,
                 new ActionPredicateCompare<XToolsEvents.UIButtonTypes>(ref XToolsEvents.UIButtonPressed,
                     XToolsEvents.UIButtonTypes.Back));
-            AtCompare(intermediateResultsState, tetrisState,
-                new ActionPredicateCompare<XToolsEvents.UIButtonTypes>(ref XToolsEvents.UIButtonPressed,
-                    XToolsEvents.UIButtonTypes.Back));
+            // AtCompare(transitionState, tetrisState,
+            //     new ActionPredicateCompare<XToolsEvents.UIButtonTypes>(ref XToolsEvents.UIButtonPressed,
+            //         XToolsEvents.UIButtonTypes.Back));
 
             AtActionWithData(tetrisState, endGameState, new ActionPredicateWithData<bool>(ref GameEvents.GameIsOver));
-            AtActionWithData(tetrisState, intermediateResultsState,
+            AtActionWithData(tetrisState, transitionState,
                 new ActionPredicateWithData<AnimalProcessingResults>(ref GameEvents.AnimalsProcessed));
+
+            AtAction(transitionState, tetrisState, new ActionPredicate(ref GameEvents.TransitionComplete));
 
             _stateMachine.SetState(tetrisState);
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace XTools.SM.Iron {
     public class StateMachine {
@@ -9,6 +10,12 @@ namespace XTools.SM.Iron {
         readonly HashSet<Transition> anyTransitions = new();
 
         public IState CurrentState => currentNode.State;
+
+        MonoBehaviour _coreMB;
+
+        public StateMachine(MonoBehaviour core) {
+            _coreMB = core;
+        }
 
         public void Update() {
             var transition = GetTransition();
@@ -76,6 +83,7 @@ namespace XTools.SM.Iron {
             if (node == null) {
                 node = new StateNode(state);
                 nodes[state.GetType()] = node;
+                node.State.Init(_coreMB);
             }
 
             return node;

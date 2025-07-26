@@ -22,6 +22,10 @@ namespace Horse {
 
         protected abstract void  SetupStateMachine();
         
+        protected void AtAction(IState from, IState to, ActionPredicate condition) {
+            _stateMachine.AddTransition(from, to, condition);
+        }
+        
         protected void AtCompare(IState from, IState to, ActionPredicateCompare<UIButtonTypes> condition) {
             _stateMachine.AddTransition(from, to, condition);
         }
