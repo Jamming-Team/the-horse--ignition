@@ -5,14 +5,17 @@ using UnityEngine;
 namespace Horse {
     public class AnimalProcessingController : MonoBehaviour {
         
+        [SerializeField] AnimalProcessingView _view;
+        
         AnimalProcessingModel _model;
         
         void Awake() {
-            HorseEvents.AnimalContainersSent += AnimalContainersSent;
+            _model = new AnimalProcessingModel();
+            GameEvents.AnimalContainersSent += AnimalContainersSent;
         }
 
         void OnDestroy() {
-            HorseEvents.AnimalContainersSent -= AnimalContainersSent;
+            GameEvents.AnimalContainersSent -= AnimalContainersSent;
         }
 
         void AnimalContainersSent(List<List<AnimalData>> obj) {
@@ -30,8 +33,9 @@ namespace Horse {
                 wereSaved = totalCount -  eatingLogs.Count,
             };
 
-            HorseEvents.AnimalsProcessed.Invoke(results);
+            _view.FillView(eatingLogs);
             
+            GameEvents.AnimalsProcessed.Invoke(results);
         }
     }
 
