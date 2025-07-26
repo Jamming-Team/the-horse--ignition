@@ -6,8 +6,6 @@ namespace Horse.Inventory
 {
     public class InventoryItem : MonoBehaviour
     {
-        const int SPRITE_SIZE = 64; // for example
-        
         public InventoryItemData data;
         public Image iconImage;
         public RectTransform rectTransform;
@@ -15,7 +13,20 @@ namespace Horse.Inventory
         public void SetData(InventoryItemData itemData) {
             data = itemData;
             iconImage.sprite = data.icon;
-            rectTransform.sizeDelta = new Vector2(data.width * SPRITE_SIZE, data.height * SPRITE_SIZE);
+        
+            // cellSize из InventoryGrid
+            InventoryGrid grid = FindObjectOfType<InventoryGrid>();
+            if (grid != null)
+            {
+                rectTransform.sizeDelta = new Vector2(
+                    data.width * grid.cellSize,
+                    data.height * grid.cellSize
+                );
+            }
+            else
+            {
+                Debug.LogError("InventoryGrid is not found!");
+            }
         }
 
         private void Start()
