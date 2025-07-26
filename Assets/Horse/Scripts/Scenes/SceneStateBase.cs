@@ -8,11 +8,11 @@ namespace Horse {
     public abstract class SceneStateBase : IState {
         public List<GameObject> views;
 
-        public void OnEnter() {
+        public virtual void OnEnter() {
             views.ForEach(view => view.SetActive(true));
         }
 
-        public void OnExit() {
+        public virtual void OnExit() {
             views.ForEach(view => view.SetActive(false));
         }
     }
