@@ -23,6 +23,8 @@ namespace Horse {
             base.Awake();
             // ServiceLocator.ForSceneOf(this).Register(this);
             _gameData = _dataManager.GetData<GameDataSO>();
+            _curRatio = HALF_RATIO;
+            AdjustTruck();
         }
 
         // void Update() {

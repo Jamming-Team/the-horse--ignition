@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace Horse.UI {
+namespace Horse {
     public class EndGameView : MonoBehaviour {
         [SerializeField] TMP_Text _total;
         [SerializeField] TMP_Text _saved;
