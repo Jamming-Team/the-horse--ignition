@@ -2,8 +2,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(RectTransform))]
-public class InventoryGrid : MonoBehaviour, IPointerEnterHandler
-{
+public class InventoryGrid : MonoBehaviour, IPointerEnterHandler {
+    [SerializeField] bool _spawnableArea = false;
+    public bool spawnableArea => _spawnableArea;
+    
     /// <summary>
     /// Size of slots that the grid will have 1X1
     /// </summary>

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f634b39972f84995be31ad94095af2e4, type: 3}
   m_Name: GameDataSO
   m_EditorClassIdentifier: 
-  maxForestBurnTime: 30
+  maxForestBurnTime: 60
   truckWaitTime: 2

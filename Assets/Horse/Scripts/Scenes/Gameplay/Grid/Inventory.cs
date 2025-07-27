@@ -91,6 +91,8 @@ public class Inventory : MonoBehaviour {
     {
         for (int g = 0; g < grids.Length; g++)
         {
+            if (!grids[g].spawnableArea)
+                continue;
             for (int y = 0; y < grids[g].gridSize.y; y++)
             {
                 for (int x = 0; x < grids[g].gridSize.x; x++)
