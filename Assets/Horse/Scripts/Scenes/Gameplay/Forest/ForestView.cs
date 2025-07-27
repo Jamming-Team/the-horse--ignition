@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Reflex.Attributes;
 using UnityEngine;
 using XTools;
 
@@ -9,7 +10,10 @@ namespace Horse {
         [SerializeField] Transform _mask;
         [SerializeField] Transform _startMaskPos;
         [SerializeField] Transform _endMaskPos;
+        [SerializeField] SoundData _fireStartsSound;
 
+        [Inject] AudioManager _audioManager;
+        
         List<GameObject> _fireParts = new List<GameObject>();
         int _curIndex;
 
@@ -29,7 +33,9 @@ namespace Horse {
             var curViewAmount = Mathf.InverseLerp(0, _fireParts.Count - 1, _curIndex);
             if (curViewAmount <= amount) {
                 _fireParts[_curIndex].gameObject.SetActive(true);
+                _audioManager.PlaySound(_fireStartsSound, _fireParts[_curIndex].transform);
                 _curIndex++;
+                
             }
             
             _mask.position = Vector3.Lerp(_startMaskPos.position, _endMaskPos.position, curViewAmount);

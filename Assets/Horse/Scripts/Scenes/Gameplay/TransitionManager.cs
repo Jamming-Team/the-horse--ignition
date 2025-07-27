@@ -13,9 +13,12 @@ namespace Horse {
         [SerializeField] SplineContainer _road;
         [SerializeField] Transform _truck;
         [SerializeField] float _truckSpeed;
+        [SerializeField] SoundData _truckSoundOut;
+        [SerializeField] SoundData _truckSoundIn;
 
         [Inject] DataManager _dataManager;
-
+        [Inject] AudioManager _audioManager;
+        
         GameDataSO _gameData;
         float _curRatio = 0f;
 
@@ -42,6 +45,8 @@ namespace Horse {
         public IEnumerator Transit() {
             _curRatio = HALF_RATIO;
 
+            _audioManager.PlaySound(_truckSoundOut);
+            
             while (_curRatio < END_RATIO) {
                 _curRatio += Time.deltaTime * _truckSpeed;
                 
@@ -54,6 +59,8 @@ namespace Horse {
 
             _curRatio = 0f;
 
+            _audioManager.PlaySound(_truckSoundIn);
+            
             while (_curRatio < HALF_RATIO) {
                 _curRatio += Time.deltaTime * _truckSpeed;
                 
