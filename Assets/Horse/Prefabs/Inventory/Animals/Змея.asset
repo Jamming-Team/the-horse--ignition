@@ -17,7 +17,8 @@ MonoBehaviour:
     whoItEats: 040000000900000003000000
     sprite: {fileID: 4030671786210053871, guid: 25b6a26ea8920d1479e96c9ed647df15, type: 3}
   soundData:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: f260da031a624d6e8a8e11e58bfca5b7, type: 3}
     mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0
