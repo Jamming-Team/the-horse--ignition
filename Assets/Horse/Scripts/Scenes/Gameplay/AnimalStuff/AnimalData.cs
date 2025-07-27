@@ -12,6 +12,15 @@ namespace Horse {
 
     public enum AnimalType {
         Bear,
-        Cow
+        barsuk,
+        ris,
+        jaba,
+        mish,
+        krolik,
+        zmeya,
+        nasekomoe,
+        sova,
+        yaitso,
+        ej
     }
 }

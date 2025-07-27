@@ -10494,8 +10494,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animalsToSpawn: 15
   itemsData:
-  - {fileID: 11400000, guid: ce4743126679bb59abdc149c5d15521c, type: 2}
-  - {fileID: 11400000, guid: 82e84051e26510dccb248438dadcdf1c, type: 2}
+  - {fileID: 11400000, guid: 9af6d6d87875fed17aeae9a123ebe438, type: 2}
+  - {fileID: 11400000, guid: d77201a2f5b7f5874be53a3b6cbb587e, type: 2}
+  - {fileID: 11400000, guid: e8f5a3b893881b7bfb6d443340ee8e0a, type: 2}
+  - {fileID: 11400000, guid: 6edb52cec77e6ecee9cace4c50de6102, type: 2}
+  - {fileID: 11400000, guid: 5e603f19a132f2974845ee63aa206ad3, type: 2}
+  - {fileID: 11400000, guid: 883e4ecc1c839d3f7b162d56d0dd69ef, type: 2}
+  - {fileID: 11400000, guid: 57e414f95250f655eb24cea8948f8ada, type: 2}
+  - {fileID: 11400000, guid: 6594b6649d9329100882930d283fc014, type: 2}
+  - {fileID: 11400000, guid: 1a1c68e4488f30789826479022a05116, type: 2}
+  - {fileID: 11400000, guid: 779189f4c07b7c3aab27a1007ef59db3, type: 2}
+  - {fileID: 11400000, guid: 7e6588946a12b63d08e3eac9e45616be, type: 2}
   itemPrefab: {fileID: 4522252168345950791, guid: 6d1aed91f1b33a024997f26ce84f26b8, type: 3}
 --- !u!1 &3803941234603639872
 GameObject:

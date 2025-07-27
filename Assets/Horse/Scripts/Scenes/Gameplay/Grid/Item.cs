@@ -69,7 +69,7 @@ public class Item : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        icon.sprite = data.icon;
+        icon.sprite = data.animalData.sprite;
         background.color = data.backgroundColor;
     }
 
