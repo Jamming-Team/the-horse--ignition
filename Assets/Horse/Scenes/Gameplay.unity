@@ -10492,7 +10492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75eb1dc889a4c728ce13b8e63b95a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animalsToSpawn: 15
+  _animalsToSpawn: 25
   itemsData:
   - {fileID: 11400000, guid: 9af6d6d87875fed17aeae9a123ebe438, type: 2}
   - {fileID: 11400000, guid: d77201a2f5b7f5874be53a3b6cbb587e, type: 2}
