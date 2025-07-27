@@ -161,7 +161,8 @@ MonoBehaviour:
     shouldPlayOnLoop: 0
     objectToStick: {fileID: 0}
   _onClickSoundData:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: 232a3bf6d7f65d86c9a27e95532aecfe, type: 3}
     mixerGroup: {fileID: -4406925898064385786, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0

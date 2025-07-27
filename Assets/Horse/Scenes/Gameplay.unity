@@ -1580,6 +1580,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _viewItself: {fileID: 1060939105}
+  _showTheListSound:
+    clips:
+    - {fileID: 8300000, guid: d621a027185df0ac99ed685daca8e335, type: 3}
+    mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    panStereo: 0
+    spatialBlend: 0
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    minDistance: 1
+    maxDistance: 500
+    ignoreListenerVolume: 0
+    ignoreListenerPause: 0
+    rolloffMode: 0
+    shouldPlayOnLoop: 0
+    objectToStick: {fileID: 0}
 --- !u!1 &300896115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,8 +4092,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 161508999}
   m_HandleRect: {fileID: 161508998}
   m_Direction: 0
-  m_Value: -0.00000010005763
-  m_Size: 0.36458245
+  m_Value: 0
+  m_Size: 0.36456776
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6998,7 +7023,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 966247419018458559, guid: 9b922b42406016bc4ab0910cfed3828d, type: 3}
       propertyPath: _hasSounds
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 966247419018458559, guid: 9b922b42406016bc4ab0910cfed3828d, type: 3}
       propertyPath: _buttonType
@@ -9105,7 +9130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -349.99988, y: 91.49945}
+  m_AnchoredPosition: {x: -350.00003, y: 91.49945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1814796526
@@ -9611,7 +9636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 966247419018458559, guid: 9b922b42406016bc4ab0910cfed3828d, type: 3}
       propertyPath: _hasSounds
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3733868433142017671, guid: 9b922b42406016bc4ab0910cfed3828d, type: 3}
       propertyPath: m_Pivot.x
