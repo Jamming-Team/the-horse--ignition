@@ -16,20 +16,28 @@ namespace XTools {
         [Inject] DataManagerBase _dataManager;
         Slider _sliderReference;
 
-        CountdownTimer _soundCooldownTimer = new(0.1f);
+        float _timer;
+        
+        // CountdownTimer _soundCooldownTimer = new CountdownTimer(1f);
 
         void Awake() {
             _sliderReference = GetComponent<Slider>();
             var audioData = _dataManager.GetData<AudioDataSO>();
             SetValue(audioData);
         }
-        
+
+        void Update() {
+            Debug.Log(_timer);
+            if (_timer > 0)
+                _timer -= Time.unscaledDeltaTime;
+        }
+
         void OnEnable() {
             _sliderReference.onValueChanged.AddListener(delegate {
                 RaiseUIAudioSliderEvent();
-                if (_hasSounds && _soundCooldownTimer.IsFinished) {
+                if (_hasSounds && _timer <= 0) {
                     _audioManager.PlaySound(_onValueChangedSoundData);
-                    _soundCooldownTimer.Start();
+                    _timer = 0.1f;
                 }
             });
         }
@@ -37,9 +45,9 @@ namespace XTools {
         void OnDisable() {
             _sliderReference.onValueChanged.RemoveListener(delegate {
                 RaiseUIAudioSliderEvent();
-                if (_hasSounds && _soundCooldownTimer.IsFinished) {
+                if (_hasSounds && _timer <= 0) {
                     _audioManager.PlaySound(_onValueChangedSoundData);
-                    _soundCooldownTimer.Start();
+                    _timer = 0.1f;
                 }
             });
         }
