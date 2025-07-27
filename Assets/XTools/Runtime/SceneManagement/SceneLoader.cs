@@ -35,6 +35,7 @@ namespace XTools {
             }
 
             _view.cameraRef.SetActive(true);
+            _view.uiRootRef.SetActive(true);
             
             GameLoopCenter.Instance.StartCoroutine(_model.LoadScene(sceneName));
 
@@ -49,6 +50,7 @@ namespace XTools {
             if (withAnims) _view.SetAnim(SceneLoaderV.LoadingAnims.Out);
 
             _view.cameraRef.SetActive(false);
+            _view.uiRootRef.SetActive(false);
             
             _isLoading = false;
         }

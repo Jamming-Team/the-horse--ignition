@@ -10,11 +10,15 @@ public static class InventorySettings
     /// Size that each slot has.
     /// </summary>
     public static readonly Vector2Int slotSize = new(64, 64);
+    
+    
+    public static readonly float iconScale = 0.7f;
+    
 
     /// <summary>
     /// Slot scale for external changes. Do not touch.
     /// </summary>
-    public static readonly float slotScale = 1f;
+    public static readonly float slotScale = 0.7f;
 
     /// <summary>
     /// Speed ​​at which the item will return to its target.
@@ -119,8 +123,8 @@ public class Inventory : MonoBehaviour {
                                 newItem.rectTransform = newItem.GetComponent<RectTransform>();
                                 newItem.rectTransform.SetParent(grids[g].rectTransform);
                                 newItem.rectTransform.sizeDelta = new Vector2(
-                                    itemData.size.width * InventorySettings.slotSize.x,
-                                    itemData.size.height * InventorySettings.slotSize.y
+                                    itemData.size.width * InventorySettings.slotSize.x * InventorySettings.iconScale,
+                                    itemData.size.height * InventorySettings.slotSize.y * InventorySettings.iconScale
                                 );
 
                                 newItem.indexPosition = slotPosition;
@@ -155,8 +159,8 @@ public class Inventory : MonoBehaviour {
                                 newItem.rectTransform = newItem.GetComponent<RectTransform>();
                                 newItem.rectTransform.SetParent(grids[g].rectTransform);
                                 newItem.rectTransform.sizeDelta = new Vector2(
-                                    itemData.size.width * InventorySettings.slotSize.x,
-                                    itemData.size.height * InventorySettings.slotSize.y
+                                    itemData.size.width * InventorySettings.slotSize.x * InventorySettings.iconScale,
+                                    itemData.size.height * InventorySettings.slotSize.y * InventorySettings.iconScale
                                 );
 
                                 newItem.indexPosition = slotPosition;

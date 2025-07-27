@@ -15,8 +15,12 @@ MonoBehaviour:
   musicVolume: 0.25
   sfxVolume: 0.6
   uiVolume: 0.5
-  __alchemySerializationData_XTools_AudioDataSO:
-    music:
-      isCreated: 1
-      data: 
-    unityObjectReferences: []
+  music:
+    bundles:
+      _serializedList:
+      - Key: 0
+        Value:
+          audioClips:
+          - {fileID: 8300000, guid: 0de0c29219617e2b49a803a64ef6bdf1, type: 3}
+          shouldLoopFirstClip: 1
+    crossFadeTime: 2

@@ -1,27 +1,27 @@
 using System;
 using System.Collections.Generic;
 using Alchemy.Serialization;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 namespace XTools {
-    [AlchemySerialize]
     [CreateAssetMenu(fileName = "AudioDataSO", menuName = "XTools/AudioDataSO", order = 0)]
-    public partial class AudioDataSO : ScriptableObject {
+    public class AudioDataSO : ScriptableObject {
         [Range(0.01f, 1f)]
         public float musicVolume;
         [Range(0.01f, 1f)]
         public float sfxVolume;
         [Range(0.01f, 1f)]
         public float uiVolume;
-        [AlchemySerializeField, NonSerialized]
         public MusicData music;
     }
     
-    [AlchemySerialize]
-    public partial class MusicData {
+    [Serializable]
+    public class MusicData {
         // public List<AudioClip> audioClips;
-        [AlchemySerializeField, NonSerialized]
-        public Dictionary<MusicBundleType, MusicBundle> bundles = new();
+        // [AlchemySerializeField, NonSerialized]
+        [SerializedDictionary("Type", "Bundle")]
+        public SerializedDictionary<MusicBundleType, MusicBundle> bundles = new();
 
         public float crossFadeTime = 2.0f;
     }

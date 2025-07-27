@@ -74,7 +74,7 @@ public class InventoryController : MonoBehaviour
         {
             MoveSelectedItemToMouse();
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Mouse1))
             {
                 inventory.selectedItem.Rotate();
             }

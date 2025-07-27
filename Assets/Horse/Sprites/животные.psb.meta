@@ -121,13 +121,13 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 2, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
+      x: 29
       y: 789
-      width: 228
+      width: 203
       height: 590
     spriteID: 38e8845e63e32556a84183f6a91c0db9
     spriteBone: []
@@ -213,10 +213,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 703
-      y: 514
-      width: 262
-      height: 190
+      x: 694
+      y: 515
+      width: 306
+      height: 196
     spriteID: f4b788b1e130f6ed6a25cf90be08f37d
     spriteBone: []
     spriteOutline: []
@@ -302,9 +302,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 614
-      y: 266
-      width: 346
-      height: 226
+      y: 261
+      width: 356
+      height: 251
     spriteID: dfcef892149e98b399f477b31856dc46
     spriteBone: []
     spriteOutline: []
@@ -385,7 +385,43 @@ ScriptedImporter:
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
   mosaicSpriteImportData: []
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -538,7 +574,7 @@ ScriptedImporter:
   rigPSDLayers: []
   sharedRigPSDLayers: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638892533877477720
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 

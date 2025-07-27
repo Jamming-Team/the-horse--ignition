@@ -40,7 +40,7 @@ namespace XTools {
 
             _initialized = true;
 
-            // PlayMusic(MusicBundleType.MainMenu, true);
+            PlayMusic(MusicBundleType.MainMenu, true);
 
             _dataChangedBinding = new EventBinding<DataChanged>(AdjustMixerVolume);
             EventBus<DataChanged>.Register(_dataChangedBinding);
