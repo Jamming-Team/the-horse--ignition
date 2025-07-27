@@ -24,6 +24,7 @@ public static class InventorySettings
 
 public class Inventory : MonoBehaviour {
     [SerializeField] int _animalsToSpawn = 15;
+    [SerializeField] SoundData _placeAnimalSound;
     [Inject] AudioManager _audioManager;
     /// <summary>
     /// List of data for each item in the game.
@@ -243,6 +244,8 @@ public class Inventory : MonoBehaviour {
         {
             DeselectItem();
         }
+        
+        _audioManager.PlaySound(_placeAnimalSound);
     }
 
     /// <summary>
