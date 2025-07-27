@@ -67,7 +67,7 @@ namespace Horse {
         
         public override void OnEnter() {
             base.OnEnter();
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
 
             _sceneLoader = GameLoopCenter.Instance.gameObject.scene.GetSceneContainer().Resolve<SceneLoader>();
             XToolsEvents.UIButtonPressed += UIButtonPressed;
