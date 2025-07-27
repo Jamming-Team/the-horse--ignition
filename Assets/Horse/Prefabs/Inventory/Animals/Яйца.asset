@@ -16,6 +16,30 @@ MonoBehaviour:
     type: 9
     whoItEats: 
     sprite: {fileID: 6639283454272490635, guid: 25b6a26ea8920d1479e96c9ed647df15, type: 3}
+  soundData:
+    clips: []
+    mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
+    playOnAwake: 0
+    frequentSound: 0
+    mute: 0
+    bypassEffects: 0
+    bypassListenerEffects: 0
+    bypassReverbZones: 0
+    priority: 128
+    volume: 1
+    pitch: 1
+    panStereo: 0
+    spatialBlend: 0
+    reverbZoneMix: 1
+    dopplerLevel: 1
+    spread: 0
+    minDistance: 1
+    maxDistance: 500
+    ignoreListenerVolume: 0
+    ignoreListenerPause: 0
+    rolloffMode: 0
+    shouldPlayOnLoop: 0
+    objectToStick: {fileID: 0}
   size:
     width: 1
     height: 1

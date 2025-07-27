@@ -137,8 +137,7 @@ MonoBehaviour:
   _buttonType: 0
   _hasSounds: 1
   _onHoverSoundData:
-    clips:
-    - {fileID: 8300000, guid: 0d7152712c0a8e26793dcb63375c5980, type: 3}
+    clips: []
     mixerGroup: {fileID: -4406925898064385786, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0

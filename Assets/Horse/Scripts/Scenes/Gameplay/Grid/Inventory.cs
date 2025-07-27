@@ -1,6 +1,8 @@
 using System;
 using Horse;
+using Reflex.Attributes;
 using UnityEngine;
+using XTools;
 
 public static class InventorySettings
 {
@@ -22,6 +24,7 @@ public static class InventorySettings
 
 public class Inventory : MonoBehaviour {
     [SerializeField] int _animalsToSpawn = 15;
+    [Inject] AudioManager _audioManager;
     /// <summary>
     /// List of data for each item in the game.
     /// </summary>
@@ -47,7 +50,7 @@ public class Inventory : MonoBehaviour {
     /// Currently selected item.
     /// </summary>
     public Item selectedItem { get; private set; }
-
+    
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -77,6 +80,7 @@ public class Inventory : MonoBehaviour {
         selectedItem = item;
         selectedItem.rectTransform.SetParent(transform);
         selectedItem.rectTransform.SetAsLastSibling();
+        _audioManager.PlaySound(item.data.soundData);
     }
 
     /// <summary>

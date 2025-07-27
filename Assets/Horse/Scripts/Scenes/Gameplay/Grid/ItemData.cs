@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Horse;
 using UnityEngine;
+using XTools;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "Inventory/ItemData")]
 public class ItemData : ScriptableObject
 {
     public AnimalData animalData;
+    public SoundData soundData;
     
     /// <summary>
     /// Size in width and height of the item.
