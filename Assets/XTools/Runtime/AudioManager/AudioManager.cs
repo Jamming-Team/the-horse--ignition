@@ -77,12 +77,12 @@ namespace XTools {
 
         // --- Interface ---
 
-        public SoundEmitter PlaySound(SoundData soundData, Transform playTransform = null, Transform parent = null) {
+        public SoundEmitter PlaySound(SoundData soundData, Transform playTransform = null) {
             if (!_soundModel.initialized || soundData.clips.Count == 0) return null;
 
             var a = _soundModel.CreateSoundBuilder().WithRandomPitch();
             if (playTransform != null) a.WithPosition(playTransform.position);
-            if (parent != null) a.WithParent(parent);
+            // if (parent != null) a.WithParent(parent);
 
             return a.Play(soundData);
         }

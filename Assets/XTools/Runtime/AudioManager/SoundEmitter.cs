@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace XTools {
     [RequireComponent(typeof(AudioSource))]
@@ -14,6 +16,12 @@ namespace XTools {
 
         void Awake() {
             _audioSource = gameObject.GetOrAdd<AudioSource>();
+        }
+
+        void Update() {
+            if (_playingCoroutine != null && soundData.objectToStick) {
+                transform.position = soundData.objectToStick.transform.position;
+            }
         }
 
         public void Initialize(SoundData data, SoundModel model) {
@@ -47,6 +55,7 @@ namespace XTools {
             _audioSource.rolloffMode = data.rolloffMode;
 
             _audioSource.loop = data.shouldPlayOnLoop;
+            
         }
 
         public void Play() {
