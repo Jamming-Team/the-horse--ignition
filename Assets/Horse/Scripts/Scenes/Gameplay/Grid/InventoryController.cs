@@ -21,8 +21,7 @@ public class InventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (inventory.gridOnMouse == null)
-                return;
+
 
             foreach (var grid in inventory.grids) {
                 if (RectTransformUtility.RectangleContainsScreenPoint(grid.rectTransform, Input.mousePosition, null)) {
@@ -31,7 +30,10 @@ public class InventoryController : MonoBehaviour
                 }
             }
             
-            Debug.Log(inventory.ReachedBoundary(inventory.GetSlotAtMouseCoords(), inventory.gridOnMouse));
+            if (inventory.gridOnMouse == null)
+                return;
+            
+            // Debug.Log(inventory.ReachedBoundary(inventory.GetSlotAtMouseCoords(), inventory.gridOnMouse));
             // Check if mouse is inside a any grid.
             if (!inventory.ReachedBoundary(inventory.GetSlotAtMouseCoords(), inventory.gridOnMouse))
             {
@@ -56,17 +58,17 @@ public class InventoryController : MonoBehaviour
             }
         }
 
-        // Remove an item from the inventory
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            RemoveItemWithMouse();
-        }
+        // // Remove an item from the inventory
+        // if (Input.GetKeyDown(KeyCode.Mouse1))
+        // {
+        //     RemoveItemWithMouse();
+        // }
 
-        // Generates a random item in the inventory
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            inventory.AddItem(inventory.itemsData[UnityEngine.Random.Range(0, inventory.itemsData.Length)]);
-        }
+        // // Generates a random item in the inventory
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     inventory.AddItem(inventory.itemsData[UnityEngine.Random.Range(0, inventory.itemsData.Length)]);
+        // }
 
         if (inventory.selectedItem != null)
         {
@@ -95,7 +97,7 @@ public class InventoryController : MonoBehaviour
     /// <summary>
     /// Removes the item from the inventory that the mouse is hovering over.
     /// </summary>
-    private void RemoveItemWithMouse()
+    public void RemoveItemWithMouse()
     {
         Item item = inventory.GetItemAtMouseCoords();
 

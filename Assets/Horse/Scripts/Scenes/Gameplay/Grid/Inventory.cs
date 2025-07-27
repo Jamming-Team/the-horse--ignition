@@ -6,7 +6,7 @@ public static class InventorySettings
     /// <summary>
     /// Size that each slot has.
     /// </summary>
-    public static readonly Vector2Int slotSize = new(96, 96);
+    public static readonly Vector2Int slotSize = new(64, 64);
 
     /// <summary>
     /// Slot scale for external changes. Do not touch.
@@ -19,8 +19,8 @@ public static class InventorySettings
     public static readonly float rotationAnimationSpeed = 30f;
 }
 
-public class Inventory : MonoBehaviour
-{
+public class Inventory : MonoBehaviour {
+    [SerializeField] int _animalsToSpawn = 15;
     /// <summary>
     /// List of data for each item in the game.
     /// </summary>
@@ -53,6 +53,14 @@ public class Inventory : MonoBehaviour
     private void Awake()
     {
         grids = GameObject.FindObjectsOfType<InventoryGrid>();
+
+
+    }
+
+    void Start() {
+        for (int i = 0; i < _animalsToSpawn; i++) {
+            AddItem(itemsData[UnityEngine.Random.Range(0, itemsData.Length)]);
+        }
     }
 
     /// <summary>
@@ -387,7 +395,7 @@ public class Inventory : MonoBehaviour
                 (int)(gridPosition.y / (InventorySettings.slotSize.y * InventorySettings.slotScale))
             );
 
-        Debug.Log(slotPosition);
+        // Debug.Log(slotPosition);
         
         return slotPosition;
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Horse {
     public class AnimalProcessingModel {
 
-        public void Process(ref List<AnimalEatingLog> eatingLogs, List<AnimalData> animalDatas) {
+        public void Process(ref List<AnimalEatingLog> eatingLogs, List<ItemData> animalDatas) {
             
             foreach (var potentialEater in animalDatas.ToArray()) {
                 if (potentialEater == null)
@@ -14,12 +14,12 @@ namespace Horse {
                     if (potentialPrey == null)
                         continue;
                     
-                    bool canEat = potentialEater.whoItEats.Contains(potentialPrey.type);
+                    bool canEat = potentialEater.animalData.whoItEats.Contains(potentialPrey.animalData.type);
                     if (canEat) {
                         eatingLogs.Add( new AnimalEatingLog()
                         {
-                            eater = potentialEater,
-                            prey = potentialPrey,
+                            eater = potentialEater.animalData,
+                            prey = potentialPrey.animalData,
                         });
 
                         animalDatas.Remove(potentialPrey);

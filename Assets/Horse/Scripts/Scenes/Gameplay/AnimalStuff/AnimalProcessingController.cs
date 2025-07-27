@@ -25,7 +25,7 @@ namespace Horse {
             
             foreach (var container in obj) {
                 totalCount += container.animals.Count;
-                _model.Process(ref eatingLogs, container.ExtractData());
+                _model.Process(ref eatingLogs, container.animals);
             }
 
             var results = new AnimalProcessingResults {
