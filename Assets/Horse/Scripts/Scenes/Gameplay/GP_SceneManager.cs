@@ -9,10 +9,16 @@ namespace Horse {
 
         void Awake() {
             GameEvents.AnimalsProcessed += OnAnimalsProcessed;
+            GameEvents.AnimalsSpawned += AnimalsSpawned;
         }
 
         void OnDestroy() {
             GameEvents.AnimalsProcessed -= OnAnimalsProcessed;
+            GameEvents.AnimalsSpawned -= AnimalsSpawned;
+        }
+        
+        void AnimalsSpawned(int obj) {
+            _gameResults.AddUp(total: obj);
         }
 
         void OnAnimalsProcessed(AnimalProcessingResults obj) {

@@ -10,6 +10,8 @@ namespace Horse {
         [SerializeField] Inventory _inventory;
         [SerializeField] List<GameObject> _grids = new List<GameObject>();
 
+        [SerializeField] GameObject _spawnerGrid;
+
         List<AnimalContainer> _containers = new();
         
         void Awake() {
@@ -34,6 +36,9 @@ namespace Horse {
                 }
                 
                 GameEvents.AnimalContainersSent.Invoke(_containers);
+                if (_spawnerGrid.transform.childCount == 0) {
+                    GameEvents.GameIsOver.Invoke(true);
+                }
             }
         }
     }

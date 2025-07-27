@@ -26,7 +26,7 @@ namespace Horse {
 
         void OnGameIsOver(bool obj) {
             if (obj) {
-                _resultText.text = "You saved them all!";
+                _resultText.text = "You saved extracted all of them";
             }
             else {
                 _resultText.text = "Not everyone was saved";

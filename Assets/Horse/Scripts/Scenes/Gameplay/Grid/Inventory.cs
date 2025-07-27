@@ -1,4 +1,5 @@
 using System;
+using Horse;
 using UnityEngine;
 
 public static class InventorySettings
@@ -56,11 +57,14 @@ public class Inventory : MonoBehaviour {
 
 
     }
+    int _totalAnimals = 0;
 
     void Start() {
+        _totalAnimals = 0;
         for (int i = 0; i < _animalsToSpawn; i++) {
             AddItem(itemsData[UnityEngine.Random.Range(0, itemsData.Length)]);
         }
+        GameEvents.AnimalsSpawned.Invoke(_totalAnimals);
     }
 
     /// <summary>
@@ -87,8 +91,8 @@ public class Inventory : MonoBehaviour {
     /// Add an item to the inventory dynamically by looking for where the item might fit.
     /// </summary>
     /// <param name="itemData">Data of the item that will be added to the inventory.</param>
-    public void AddItem(ItemData itemData)
-    {
+    public void AddItem(ItemData itemData) {
+        
         for (int g = 0; g < grids.Length; g++)
         {
             if (!grids[g].spawnableArea)
@@ -106,6 +110,7 @@ public class Inventory : MonoBehaviour {
                             if (!ExistsItem(slotPosition, grids[g], itemData.size.width, itemData.size.height))
                             {
                                 Item newItem = Instantiate(itemPrefab);
+                                _totalAnimals++;
                                 newItem.rectTransform = newItem.GetComponent<RectTransform>();
                                 newItem.rectTransform.SetParent(grids[g].rectTransform);
                                 newItem.rectTransform.sizeDelta = new Vector2(
@@ -139,6 +144,7 @@ public class Inventory : MonoBehaviour {
                             if (!ExistsItem(slotPosition, grids[g], itemData.size.height, itemData.size.width))
                             {
                                 Item newItem = Instantiate(itemPrefab);
+                                _totalAnimals++;
                                 newItem.Rotate();
 
                                 newItem.rectTransform = newItem.GetComponent<RectTransform>();

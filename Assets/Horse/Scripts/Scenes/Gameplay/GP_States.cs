@@ -62,5 +62,29 @@ namespace Horse {
 
     [Serializable]
     public sealed class EndGameState : GP_State {
+        
+        SceneLoader _sceneLoader;
+        
+        public override void OnEnter() {
+            base.OnEnter();
+            Time.timeScale = 0;
+
+            _sceneLoader = GameLoopCenter.Instance.gameObject.scene.GetSceneContainer().Resolve<SceneLoader>();
+            XToolsEvents.UIButtonPressed += UIButtonPressed;
+        }
+
+        public override void OnExit() {
+            base.OnExit();
+            XToolsEvents.UIButtonPressed -= UIButtonPressed;
+        }
+
+        void UIButtonPressed(XToolsEvents.UIButtonTypes obj) {
+            if (obj.Equals(XToolsEvents.UIButtonTypes.LoadMainMenu)) {
+                _sceneLoader.TryLoadScene("MainMenu");
+            }
+            else if (obj.Equals(XToolsEvents.UIButtonTypes.LoadGameplay)) {
+                _sceneLoader.TryLoadScene("Gameplay");
+            }
+        }
     }
 }
