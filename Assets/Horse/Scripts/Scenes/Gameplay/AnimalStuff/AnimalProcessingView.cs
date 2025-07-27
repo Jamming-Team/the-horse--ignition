@@ -7,6 +7,7 @@ namespace Horse {
         [SerializeField] GameObject _logItemsViewRoot;
 
         [SerializeField] GameObject _noOneText;
+        [SerializeField] GameObject _finalView;
 
         List<AnimalViewLogItem> _shownLogItems = new List<AnimalViewLogItem>();
 
@@ -18,6 +19,8 @@ namespace Horse {
             _shownLogItems.Clear();
 
             _noOneText.SetActive(!(logItems.Count > 0));
+            _finalView.SetActive(logItems.Count > 0);
+            
             foreach (var logItem in logItems) {
                 var item = Instantiate(_logItemViewPrefab, _logItemsViewRoot.transform);
                 item.Initialize(logItem);
