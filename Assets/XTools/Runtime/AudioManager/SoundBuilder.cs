@@ -4,6 +4,7 @@ namespace XTools {
     public class SoundBuilder {
         readonly SoundModel _soundModel;
         Vector3 _position = Vector3.zero;
+        Transform _parent = null;
         bool _randomPitch;
 
         public SoundBuilder(SoundModel soundModel) {
@@ -14,6 +15,13 @@ namespace XTools {
             _position = position;
             return this;
         }
+        
+        public SoundBuilder WithParent(Transform transform) {
+            _parent = transform;
+            return this;
+        }
+        
+        
 
         public SoundBuilder WithRandomPitch() {
             _randomPitch = true;
@@ -31,7 +39,7 @@ namespace XTools {
             SoundEmitter soundEmitter = _soundModel.Get();
             soundEmitter.Initialize(soundData, _soundModel);
             soundEmitter.transform.position = _position;
-            soundEmitter.transform.parent = _soundModel.transform;
+            soundEmitter.transform.parent = _parent == null ? _soundModel.transform  : _parent;
 
             if (_randomPitch) soundEmitter.WithRandomPitch();
 

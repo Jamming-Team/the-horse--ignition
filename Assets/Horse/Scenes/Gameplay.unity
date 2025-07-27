@@ -3937,8 +3937,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 161508999}
   m_HandleRect: {fileID: 161508998}
   m_Direction: 0
-  m_Value: -0.0000003001729
-  m_Size: 0.36450976
+  m_Value: 0
+  m_Size: 0.36458224
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5054,8 +5054,9 @@ MonoBehaviour:
   _truck: {fileID: 1655867803}
   _truckSpeed: 0.5
   _truckSoundOut:
-    clips: []
-    mixerGroup: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: efcdb6fcabcfd13d3875192e9189337f, type: 3}
+    mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0
     mute: 0
@@ -5066,20 +5067,21 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     panStereo: 0
-    spatialBlend: 0
+    spatialBlend: 1
     reverbZoneMix: 1
     dopplerLevel: 1
     spread: 0
     minDistance: 1
-    maxDistance: 500
+    maxDistance: 20
     ignoreListenerVolume: 0
     ignoreListenerPause: 0
-    rolloffMode: 0
+    rolloffMode: 2
     shouldPlayOnLoop: 0
     objectToStick: {fileID: 0}
   _truckSoundIn:
-    clips: []
-    mixerGroup: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: b338e8e1af38570b69cbb5cec240695a, type: 3}
+    mixerGroup: {fileID: -2765737041717271888, guid: 0681b3d51e78ac7e4905b21434b57b49, type: 2}
     playOnAwake: 0
     frequentSound: 0
     mute: 0
@@ -5090,15 +5092,15 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     panStereo: 0
-    spatialBlend: 0
+    spatialBlend: 1
     reverbZoneMix: 1
     dopplerLevel: 1
     spread: 0
     minDistance: 1
-    maxDistance: 500
+    maxDistance: 15
     ignoreListenerVolume: 0
     ignoreListenerPause: 0
-    rolloffMode: 0
+    rolloffMode: 2
     shouldPlayOnLoop: 0
     objectToStick: {fileID: 0}
 --- !u!1 &1041070260
@@ -8972,7 +8974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -349.9996, y: 91.49945}
+  m_AnchoredPosition: {x: -349.99997, y: 91.49945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1814796526

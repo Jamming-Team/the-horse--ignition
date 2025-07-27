@@ -45,7 +45,7 @@ namespace Horse {
         public IEnumerator Transit() {
             _curRatio = HALF_RATIO;
 
-            _audioManager.PlaySound(_truckSoundOut);
+            _audioManager.PlaySound(_truckSoundOut, _truck, _truck);
             
             while (_curRatio < END_RATIO) {
                 _curRatio += Time.deltaTime * _truckSpeed;
@@ -59,7 +59,7 @@ namespace Horse {
 
             _curRatio = 0f;
 
-            _audioManager.PlaySound(_truckSoundIn);
+            _audioManager.PlaySound(_truckSoundIn, _truck, _truck);
             
             while (_curRatio < HALF_RATIO) {
                 _curRatio += Time.deltaTime * _truckSpeed;
